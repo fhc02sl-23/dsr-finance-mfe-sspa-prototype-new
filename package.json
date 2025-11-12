@@ -1,0 +1,40 @@
+{
+  "name": "@DSR/dsr-finance-mfe",
+  "version": "1.0.0",
+  "description": "Micro frontend PoC using Single-spa, Angular, React",
+  "devDependencies": {
+    "vue-cli-plugin-single-spa": "~4.0.0"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "install:auth": "cd auth && npm install",
+    "install:basket": "cd basket && npm install",
+    "install:container": "cd container && npm install",
+    "install:dashboard": "cd dashboard && npm install",
+    "install:data-utility": "cd data-utility && npm install",
+    "install:marketing": "cd marketing && npm install",
+    "install:products": "cd products && npm install",
+    "install:root-config": "cd root-config && npm install",
+    "start": "npm-run-all --parallel start:*",
+    "start:auth": "cd auth && npm start",
+    "start:basket": "cd basket && npm start",
+    "start:container": "cd container && npm start",
+    "start:dashboard": "cd dashboard && npm start",
+    "start:data-utility": "cd data-utility && npm start",
+    "start:marketing": "cd marketing && npm start",
+    "start:products": "cd products && npm start",
+    "start:root-config": "cd root-config && npm start",
+    "build": "npm-run-all --parallel build:*",
+    "build:auth": "cd auth && npm run build",
+    "build:basket": "cd basket && npm run build",
+    "build:container": "cd container && npm run build",
+    "build:dashboard": "cd dashboard && npm run build",
+    "build:data-utility": "cd data-utility && npm run build",
+    "build:marketing": "cd marketing && npm run build",
+    "build:products": "cd products && npm run build",
+    "build:root-config": "cd root-config && npm run build"
+  }
+}

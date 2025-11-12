@@ -1,0 +1,53 @@
+{
+  "name": "@DSR/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "vue-cli-service serve --port 9008",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "serve:standalone": "vue-cli-service serve --mode standalone"
+  },
+  "dependencies": {
+    "chart.js": "3.7.1",
+    "core-js": "^3.8.3",
+    "primeflex": "3.1.3",
+    "primeicons": "5.0.0",
+    "primevue": "3.12.0",
+    "scss": "^0.2.4",
+    "single-spa-vue": "^3.0.1",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.5",
+    "vue-cli-plugin-single-spa": "~4.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
