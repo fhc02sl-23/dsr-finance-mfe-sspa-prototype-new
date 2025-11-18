@@ -9,7 +9,7 @@ module.exports = defineConfig({
     plugins: [
       new BundleAnalyzerPlugin({
         analyzerMode: 'server',      // "server" öffnet automatisch localhost:[port]
-        analyzerPort: 8883,          // Port für das UI
+        analyzerPort: 8853,          // Port für das UI
         openAnalyzer: true,          // Browser automatisch öffnen
         generateStatsFile: true,     // stats.json Datei erzeugen
         statsFilename: 'stats.json', // optionaler Name
