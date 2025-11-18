@@ -20,6 +20,18 @@ export default function Root(props) {
       setLocalCartItems(items);
     });
 
+    if (performance.getEntriesByName('navigate-to-basket-start').length > 0) {
+      performance.mark('navigate-to-basket-end');
+      performance.measure('navigate-to-basket-duration', 'navigate-to-basket-start', 'navigate-to-basket-end');
+  
+      const [measure] = performance.getEntriesByName('navigate-to-basket-duration');
+      console.log(`🕒 Navigation Basket (Products → Basket): ${measure.duration.toFixed(2)} ms`);
+  
+      performance.clearMarks('navigate-to-basket-start');
+      performance.clearMarks('navigate-to-basket-end');
+      performance.clearMeasures('navigate-to-basket-duration');
+    }
+
     return () => subscription.unsubscribe();
   },[])
   useEffect(() => {

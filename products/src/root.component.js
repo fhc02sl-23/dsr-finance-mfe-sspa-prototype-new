@@ -17,6 +17,18 @@ export default function Root() {
       setLocation(location);
     });
 
+    if (performance.getEntriesByName('navigate-to-shop-start').length > 0) {
+      performance.mark('navigate-to-shop-end');
+      performance.measure('navigate-to-shop-duration', 'navigate-to-shop-start', 'navigate-to-shop-end');
+  
+      const [measure] = performance.getEntriesByName('navigate-to-shop-duration');
+      console.log(`🕒 Navigation Shop (Basket → Products): ${measure.duration.toFixed(2)} ms`);
+  
+      performance.clearMarks('navigate-to-shop-start');
+      performance.clearMarks('navigate-to-shop-end');
+      performance.clearMeasures('navigate-to-shop-duration');
+    }
+
     return () => {
       unlisten();
     };

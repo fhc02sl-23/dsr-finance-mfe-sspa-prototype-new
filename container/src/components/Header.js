@@ -8,7 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 
 // export default function Header({ isSignedIn, onSignOut, cartCount }) {
-export default function Header({isSignedIn, onClick, cartCount}) {
+  export default function Header({ isSignedIn, onClick, cartCount, onBasketClick, onShopClick }) {
 
   return (
     <React.Fragment>
@@ -46,18 +46,16 @@ export default function Header({isSignedIn, onClick, cartCount}) {
               Dashboard
             </Button>
            {/* MITTE: Navigation zu Shop & Cart */}
-            <Button
-              color="inherit"
-              component={RouterLink}
-              to="/shop"          // -> Products-MFE
-            >
+           <Button
+            color="inherit"
+            onClick={onShopClick}
+          >
               Markets
             </Button>
             {/* Cart mit optionalem Badge für cartCount */}
             <Button
               color="inherit"
-              component={RouterLink}
-              to="/cart"          // -> Basket-MFE
+              onClick={onBasketClick}
             >
               {typeof cartCount === 'number' ? (
                 <Badge badgeContent={cartCount} color="primary">

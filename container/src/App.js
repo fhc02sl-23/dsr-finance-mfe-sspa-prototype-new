@@ -62,6 +62,17 @@ const App = () => {
     }
   };
 
+  const onBasketClick = () => {
+    performance.mark('navigate-to-basket-start');
+    navigateToUrl('/cart');
+  };
+
+  const onShopClick = () => {
+    performance.mark('navigate-to-shop-start');
+    navigateToUrl('/shop');
+  };
+  
+
   useEffect(() => {
     if(window.location.pathname === '/dashboard' && !isSignedIn$.value) {
       navigate('/');
@@ -75,6 +86,8 @@ const App = () => {
           isSignedIn={isSignedIn}
           onClick={onClick}
           cartCount={cartCount}
+          onBasketClick={onBasketClick}
+          onShopClick={onShopClick}
         />
         {
           pathname === '/' && (
