@@ -14,7 +14,7 @@ module.exports = (webpackConfigEnv, argv) => {
     plugins: [ 
       new BundleAnalyzerPlugin({
         analyzerMode: 'server',
-        analyzerPort: 8857,
+        analyzerPort: 8887,
         generateStatsFile: true,
       }),
     ],
